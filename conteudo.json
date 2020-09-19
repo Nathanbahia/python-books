@@ -1,0 +1,194 @@
+const livros = [
+    {
+        "livro": "Livro Introdução À Programação Com Python - 3ª Ed Novatec",
+        "imagem": "https://http2.mlstatic.com/livro-introduco-programaco-com-python-3-ed-novatec-D_NQ_NP_865810-MLB29134183671_012019-W.jpg"
+    },
+    {
+        "livro": "Black Hat Python - Programaçao Python Para Hackers E Pentes",
+        "imagem": "https://http2.mlstatic.com/black-hat-python-programacao-python-para-hackers-e-pentes-D_NQ_NP_920077-MLB31988710230_082019-W.jpg"
+    },
+    {
+        "livro": "Livro Curso Intensivo De Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-curso-intensivo-de-python-novatec-editora-D_NQ_NP_913724-MLB25878559026_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Python Para Pentest Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-para-pentest-novatec-editora-D_NQ_NP_941273-MLB27829307181_072018-W.jpg"
+    },
+    {
+        "livro": "Livro Python Fluente Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-fluente-novatec-editora-D_NQ_NP_645139-MLB25883521162_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Pense Em Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-pense-em-python-novatec-editora-D_NQ_NP_800728-MLB25883548801_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Python Para Análise De Dados Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-para-analise-de-dados-novatec-editora-D_NQ_NP_842790-MLB26639722075_012018-W.jpg"
+    },
+    {
+        "livro": "Introduçao A Programaçao Com Python",
+        "imagem": "https://http2.mlstatic.com/introducao-a-programacao-com-python-D_NQ_NP_781247-MLB31986158769_082019-W.jpg"
+    },
+    {
+        "livro": "Matematica Com Python - Um Guia Pratico",
+        "imagem": "https://http2.mlstatic.com/matematica-com-python-um-guia-pratico-D_NQ_NP_938753-MLB31982364190_082019-W.jpg"
+    },
+    {
+        "livro": "Livro Programação De Redes Com Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-programaco-de-redes-com-python-novatec-editora-D_NQ_NP_856717-MLB25887730184_082017-W.jpg"
+    },
+    {
+        "livro": "Use A Cabeça Python",
+        "imagem": "https://http2.mlstatic.com/use-a-cabeca-python-D_NQ_NP_815606-MLB40433020355_012020-W.jpg"
+    },
+    {
+        "livro": "Livro Tdd Com Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-tdd-com-python-novatec-editora-D_NQ_NP_849905-MLB26639729800_012018-W.jpg"
+    },
+    {
+        "livro": "Livro Programação Do Raspberry Pi Com Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-programaco-do-raspberry-pi-com-python-novatec-editora-D_NQ_NP_993789-MLB29134408404_012019-W.jpg"
+    },
+    {
+        "livro": "Livro Introdução À Linguagem Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-introduco-linguagem-python-novatec-editora-D_NQ_NP_902209-MLB28825299989_112018-W.jpg"
+    },
+    {
+        "livro": "Livro Matemática Com Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-matematica-com-python-novatec-editora-D_NQ_NP_730538-MLB28340231351_102018-W.jpg"
+    },
+    {
+        "livro": "Comecando A Programar Em Python Para Leigos - Alta Books",
+        "imagem": "https://http2.mlstatic.com/comecando-a-programar-em-python-para-leigos-alta-books-D_NQ_NP_913113-MLB32413484462_102019-W.jpg"
+    },
+    {
+        "livro": "Tdd Com Python",
+        "imagem": "https://http2.mlstatic.com/tdd-com-python-D_NQ_NP_813022-MLB31986154400_082019-W.jpg"
+    },
+    {
+        "livro": "Pense Em Python",
+        "imagem": "https://http2.mlstatic.com/pense-em-python-D_NQ_NP_601505-MLB31987737434_082019-W.jpg"
+    },
+    {
+        "livro": "Python Para Pentest",
+        "imagem": "https://http2.mlstatic.com/python-para-pentest-D_NQ_NP_818131-MLB31986520021_082019-W.jpg"
+    },
+    {
+        "livro": "Livro Python Cookbook Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-cookbook-novatec-editora-D_NQ_NP_961388-MLB31191362133_062019-W.jpg"
+    },
+    {
+        "livro": "Livro Análise De Dados Com Python E Pandas Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-analise-de-dados-com-python-e-pandas-novatec-editora-D_NQ_NP_990304-MLB28274585731_102018-W.jpg"
+    },
+    {
+        "livro": "Livro Python Para Desenvolvedores Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-para-desenvolvedores-novatec-editora-D_NQ_NP_632330-MLB25896235240_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Aprendendo Padrões De Projeto Em Python Novatec Edit",
+        "imagem": "https://http2.mlstatic.com/livro-aprendendo-padroes-de-projeto-em-python-novatec-edit-D_NQ_NP_775068-MLB25887710254_082017-W.jpg"
+    },
+    {
+        "livro": "Introduçao A Linguagem Python",
+        "imagem": "https://http2.mlstatic.com/introducao-a-linguagem-python-D_NQ_NP_883454-MLB31986157384_082019-W.jpg"
+    },
+    {
+        "livro": "Kit 3 Livros Python Da Novatec Editora Com 10% Off",
+        "imagem": "https://http2.mlstatic.com/kit-3-livros-python-da-novatec-editora-com-10-off-D_NQ_NP_828914-MLB31322264249_072019-W.jpg"
+    },
+    {
+        "livro": "Livros De Python Para Iniciantes Da Novatec Editora -10% Off",
+        "imagem": "https://http2.mlstatic.com/livros-de-python-para-iniciantes-da-novatec-editora-10-off-D_NQ_NP_943146-MLB29160104891_012019-W.jpg"
+    },
+    {
+        "livro": "Kit Livros Python Da Novatec Editora Com ",
+        "imagem": "https://http2.mlstatic.com/kit-livros-python-da-novatec-editora-com-D_NQ_NP_602646-MLB28956599499_122018-W.jpg"
+    },
+    {
+        "livro": "Introducao A Computacao Usando Python - Um Foco No Desenvo",
+        "imagem": "https://http2.mlstatic.com/introducao-a-computacao-usando-python-um-foco-no-desenvo-D_NQ_NP_837033-MLB41188141485_032020-W.jpg"
+    },
+    {
+        "livro": "Python Cookbook - Novatec",
+        "imagem": "https://http2.mlstatic.com/python-cookbook-novatec-D_NQ_NP_807170-MLB32420103509_102019-W.jpg"
+    },
+    {
+        "livro": "Python Para Analise De Dados - Novatec",
+        "imagem": "https://http2.mlstatic.com/python-para-analise-de-dados-novatec-D_NQ_NP_679152-MLB32424652220_102019-W.jpg"
+    },
+    {
+        "livro": "Analise De Dados Com Python E Pandas - Novatec",
+        "imagem": "https://http2.mlstatic.com/analise-de-dados-com-python-e-pandas-novatec-D_NQ_NP_931302-MLB32420445376_102019-W.jpg"
+    },
+    {
+        "livro": "Python Fluente - Programaçao Clara, Concisa E Eficaz",
+        "imagem": "https://http2.mlstatic.com/python-fluente-programacao-clara-concisa-e-eficaz-D_NQ_NP_767045-MLB31986154926_082019-W.jpg"
+    },
+    {
+        "livro": "Livro Head First - Phyton",
+        "imagem": "https://http2.mlstatic.com/livro-head-first-phyton-D_NQ_NP_800835-MLB32035783238_092019-W.jpg"
+    },
+    {
+        "livro": "Aprendendo Pentest Com Python",
+        "imagem": "https://http2.mlstatic.com/aprendendo-pentest-com-python-D_NQ_NP_789225-MLB31986513443_082019-W.jpg"
+    },
+    {
+        "livro": "Curso Intensivo De Python",
+        "imagem": "https://http2.mlstatic.com/curso-intensivo-de-python-D_NQ_NP_875301-MLB31988713699_082019-W.jpg"
+    },
+    {
+        "livro": "Python Para Analise De Dados",
+        "imagem": "https://http2.mlstatic.com/python-para-analise-de-dados-D_NQ_NP_604500-MLB31985230566_082019-W.jpg"
+    },
+    {
+        "livro": "Aprendendo Padroes De Projeto Em Python",
+        "imagem": "https://http2.mlstatic.com/aprendendo-padroes-de-projeto-em-python-D_NQ_NP_917499-MLB31987487970_082019-W.jpg"
+    },
+    {
+        "livro": "Livro O Guia Do Mochileiro Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-o-guia-do-mochileiro-python-novatec-editora-D_NQ_NP_939086-MLB25888052777_082017-W.jpg"
+    },
+    {
+        "livro": "Python Eficaz",
+        "imagem": "https://http2.mlstatic.com/python-eficaz-D_NQ_NP_883329-MLB31976348409_082019-W.jpg"
+    },
+    {
+        "livro": "Consumindo A Api Do Zabrix Com Python",
+        "imagem": "https://http2.mlstatic.com/consumindo-a-api-do-zabrix-com-python-D_NQ_NP_719284-MLB31979422872_082019-W.jpg"
+    },
+    {
+        "livro": "Livro Aprendendo Pentest Com Python Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-aprendendo-pentest-com-python-novatec-editora-D_NQ_NP_995395-MLB25903908695_082017-W.jpg"
+    },
+    {
+        "livro": "Introduccion A La Programacion Con Python",
+        "imagem": "https://http2.mlstatic.com/introduccion-a-la-programacion-con-python-D_NQ_NP_824153-MLB31970847848_082019-W.jpg"
+    },
+    {
+        "livro": "Analise De Dados Com Python E Pandas",
+        "imagem": "https://http2.mlstatic.com/analise-de-dados-com-python-e-pandas-D_NQ_NP_982337-MLB31984962643_082019-W.jpg"
+    },
+    {
+        "livro": "Guia Do Mochileiro Python, O",
+        "imagem": "https://http2.mlstatic.com/guia-do-mochileiro-python-o-D_NQ_NP_750198-MLB31976353578_082019-W.jpg"
+    },
+    {
+        "livro": "Python Para Desenvolvedores - Novatec",
+        "imagem": "https://http2.mlstatic.com/python-para-desenvolvedores-novatec-D_NQ_NP_806055-MLB32383824297_102019-W.jpg"
+    },
+    {
+        "livro": "Livro Introdução À Orientação A Objetos Com C++ E Python",
+        "imagem": "https://http2.mlstatic.com/livro-introduco-orientaco-a-objetos-com-c-e-python-D_NQ_NP_636018-MLB25887686142_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Python Eficaz Novatec Editora",
+        "imagem": "https://http2.mlstatic.com/livro-python-eficaz-novatec-editora-D_NQ_NP_713799-MLB25903338010_082017-W.jpg"
+    },
+    {
+        "livro": "Livro Introducción A La Programación Con Python Novatec Edit",
+        "imagem": "https://http2.mlstatic.com/livro-introduccion-a-la-programacion-con-python-novatec-edit-D_NQ_NP_658939-MLB25910052032_082017-W.jpg"
+    }
+]

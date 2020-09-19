@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraping</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Web Scraping Python</h1>
+
+    <div id="livros"></div>
+
+<script src="conteudo.json"></script>
+<script>
+    
+    let container = document.querySelector("#livros");
+
+    for (let i=0; i<livros.length; i++) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        let tit = document.createElement("p");
+
+        tit.innerHTML = livros[i]['livro'];
+        img.src = livros[i]['imagem'];
+
+        div.appendChild(tit);
+        div.appendChild(img);
+
+        container.appendChild(div)    
+    }
+
+</script>
+
+</body>
+</html>
