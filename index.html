@@ -9,20 +9,31 @@
     <meta name="author" content="Nathan Batista de Assis Bahia">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-    
     <style>
         
         .jumbotron {
             background-color: #FF4000;
+            margin-top: 60px;
+        }
+
+        .menu {
+            height: 60px;
         }
         
         .lojas .card {
-            height: 270px;
+            height: 150px;
             margin-bottom: 10px;
+            border: none;
+            background-color: #484848;
         }
         
         .lojas img {
-            width: 200px;
+            width: 100px;
+        }
+        
+        .card-livro:hover {
+            background-color: #ff4000;
+            color: #fff;
         }
         
         @media screen and (max-width: 480px) {
@@ -41,7 +52,7 @@
         }
         
         p, li {
-            font-size: 12px;
+            font-size: 14px;
         }
         
         #contato {
@@ -55,7 +66,7 @@
 	<div class="row">
 		<div class="w-100">
 			
-			<nav class="navbar navbar-expand-lg navbar-light bg-light mx-3 text-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light text-center fixed-top menu">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="navbar-toggler-icon"></span>
 				</button> <a class="navbar-brand" href="#">Python Books</a>
@@ -96,39 +107,33 @@
 		</div>
 	</div>
 	
-	<div class="containe w-100">
-	    
+	<div class="container w-100">
+	    <hr>
 	    <!-- Lojas -->
 	    <div class="row lojas">
-            <div class="card col-4 text-center shadow">
-                <h2 class="d-none d-md-block">Amazon</h2>
-                <span class="text-muted d-none d-md-block">amazon.com.br</span>
+            <div class="col-4 text-center">
                 <img class="m-auto" src="https://linkasites.com.br/wp-content/uploads/2020/02/cupom-de-desconto-amazon.png">
             </div>
             
-            <div class="card col-4 text-center shadow">
-                <h2 class="d-none d-md-block">Mercado Livre</h2>
-                <span class="text-muted d-none d-md-block">mercadolivre.com.br</span>
+            <div class="col-4 text-center">
                 <img class="m-auto" src="https://media-exp1.licdn.com/dms/image/C4E0BAQG3NK8LU4YZxg/company-logo_200_200/0?e=2159024400&v=beta&t=bw_TEuCR73x7tPyoKiznt-r9WSVRvhga-pCuq7_DZgg">
             </div>
             
-            <div class="card col-4 text-center shadow">
-                <h2 class="d-none d-md-block">Submarino</h2>
-                <span class="text-muted d-none d-md-block">submarino.com.br</span>
+            <div class="col-4 text-center">
                 <img class="m-auto" src="https://s3-sa-east-1.amazonaws.com/images.ofertaesperta.com/images/350_xvugpyaksnaymokjtefe.png">
-            </div>
+            </div>            
 	    </div> <!-- Fim lojas -->
-	    
+	    <hr>
 	</div>
 	
+
+	
+	<h2 class="ml-3">Livros encontrados: <span id="qtde-livros"></span></h2>
+
 	<!-- Livros -->
-	<div class="row livros" id="livros">
-	    
-	    
-	    
-	</div>
-	
+            <div class="row container-fluid m-auto" id="livros"></div>	
 	<!-- Fim livros -->
+	
 	
 	<!-- Rodapé -->
 	<footer class="footer bg-dark text-light p-2 my-2">
@@ -165,34 +170,50 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
-    <script src="conteudo.json"></script>
     <script>
     
     let container = document.querySelector("#livros");
+    
+    $.getJSON("conteudo.json", function(data) {
+        let livros = data;
 
-    for (let i=0; i<livros.length; i++) {
-        let div = document.createElement("div");
-        div.className = "card shadow col-6 col-md-2 text-center";
-        
-        let img = document.createElement("img");
-        img.setAttribute("width", "100");
-        img.className = "mx-auto my-2 mb-0"
-        
-        let tit = document.createElement("p");
+        document.querySelector("#qtde-livros").innerHTML = livros.length;
+    
+        for (let i=0; i<livros.length; i++) {
+            
+            let div = document.createElement("div");
+            div.className = "col-12 col-md-2 text-center my-4 card-livro";
+            
+            let img = document.createElement("img");
+            img.src = livros[i].imagem;
+            img.setAttribute("width", "100");
+            img.setAttribute("height", "150");
+            img.className = "mx-auto my-2 mb-0"
+            
+            let tit = document.createElement("p");
+            tit.style.height = "30px";
+            tit.innerHTML = livros[i].livro;
+            
+            let preco = document.createElement("p");
+            preco.style.fontSize = "14px"
+            preco.innerHTML = `${livros[i].preco}`;
+            
+            let link = document.createElement("a");
+            link.setAttribute("href", livros[i].link);
+            link.setAttribute("target", "_blank");
+            link.innerHTML = livros[i].loja;
+            
+            div.appendChild(tit);
+            div.appendChild(img);
+            div.appendChild(preco);
+            div.appendChild(link);
+    
+            container.appendChild(div);
+        }
+    })
 
-        tit.innerHTML = livros[i]['livro'];
-        img.src = livros[i]['imagem'];
-
-        div.appendChild(tit);
-        div.appendChild(img);
-
-        container.appendChild(div);
-    }
-
-    </script>
-        
     </script>
     
   </body>
