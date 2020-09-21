@@ -1,23 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Web Scraping</title>
+    <title>Python Books</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Compare preços de livros de programação em Python nas maiores lojas do país.">
+    <meta name="author" content="Nathan Batista de Assis Bahia">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    
+    <style>
+        
+        .jumbotron {
+            background-color: #FF4000;
+        }
+        
+        .lojas .card {
+            height: 270px;
+            margin-bottom: 10px;
+        }
+        
+        .lojas img {
+            width: 200px;
+        }
+        
+        @media screen and (max-width: 480px) {
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            .lojas .card {
+                height: 150px;
+            }
+            
+            .lojas img {
+                width: 100px;
+            }
+        }
+        
+        p, li {
+            font-size: 12px;
+        }
+        
+        #contato {
+            list-style: none;
+        }
+        
+    </style>
 </head>
-<body>
-    <h1>Web Scraping Python</h1>
+  <body>
 
-    <div id="livros"></div>
+	<div class="row">
+		<div class="w-100">
+			
+			<nav class="navbar navbar-expand-lg navbar-light bg-light mx-3 text-center">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="navbar-toggler-icon"></span>
+				</button> <a class="navbar-brand" href="#">Python Books</a>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							 <a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item active">
+							 <a class="nav-link" href="#">Sobre</a>
+						</li>
+						<li class="nav-item active">
+							 <a class="nav-link" href="#">Contato</a>
+						</li>
+					</ul>
 
-<script src="conteudo.json"></script>
-<script>
+					<ul class="navbar-nav ml-md-auto">
+						<li class="nav-item active">
+							 <a class="nav-link" href="#">Github
+							    <i class="fab fa-github-square"></i>
+							 </a>
+						</li>
+					</ul>
+				</div>
+			</nav>  <!-- Fim menu -->
+			
+			
+			<div class="jumbotron text-light p-5">
+				<h2>
+				    <img src="https://www.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-512.png" width="100">
+					Python Books
+				</h2>
+				<p>
+					Compare os preços dos livros de programação em Python nas maiores lojas do país.
+				</p>
+			</div> <!-- Fim do Jumbotron -->
+			
+		</div>
+	</div>
+	
+	<div class="containe w-100">
+	    
+	    <!-- Lojas -->
+	    <div class="row lojas">
+            <div class="card col-4 text-center shadow">
+                <h2 class="d-none d-md-block">Amazon</h2>
+                <span class="text-muted d-none d-md-block">amazon.com.br</span>
+                <img class="m-auto" src="https://linkasites.com.br/wp-content/uploads/2020/02/cupom-de-desconto-amazon.png">
+            </div>
+            
+            <div class="card col-4 text-center shadow">
+                <h2 class="d-none d-md-block">Mercado Livre</h2>
+                <span class="text-muted d-none d-md-block">mercadolivre.com.br</span>
+                <img class="m-auto" src="https://media-exp1.licdn.com/dms/image/C4E0BAQG3NK8LU4YZxg/company-logo_200_200/0?e=2159024400&v=beta&t=bw_TEuCR73x7tPyoKiznt-r9WSVRvhga-pCuq7_DZgg">
+            </div>
+            
+            <div class="card col-4 text-center shadow">
+                <h2 class="d-none d-md-block">Submarino</h2>
+                <span class="text-muted d-none d-md-block">submarino.com.br</span>
+                <img class="m-auto" src="https://s3-sa-east-1.amazonaws.com/images.ofertaesperta.com/images/350_xvugpyaksnaymokjtefe.png">
+            </div>
+	    </div> <!-- Fim lojas -->
+	    
+	</div>
+	
+	<!-- Livros -->
+	<div class="row livros" id="livros">
+	    
+	    
+	    
+	</div>
+	
+	<!-- Fim livros -->
+	
+	<!-- Rodapé -->
+	<footer class="footer bg-dark text-light p-2 my-2">
+	    <div class="row">
+	        <div class="col-12 col-md-4">
+	            <h4>Contatos</h4>
+	            <div class="row">
+    	            <div class="col-6">
+    	                <h5>Nathan</h5>
+                        <ul id="contato">
+                            <li>LinkedIn</li>
+                            <li>Github</li>
+                            <li>E-mail</li>
+                        </ul>
+    	            </div>
+    	            <div class="col-6">
+    	                <h5>Fábio</h5>
+                        <ul id="contato">
+                            <li>LinkedIn</li>
+                            <li>Github</li>
+                            <li>E-mail</li>
+                        </ul>
+    	            </div>
+    	        </div>
+	        </div>
+	        <div class="col-12 col-md-8">
+	            <h4>O projeto</h4>
+	            <p class="text-justify">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+	        </div>
+	    </div>
+	</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+        
+    <script src="conteudo.json"></script>
+    <script>
     
     let container = document.querySelector("#livros");
 
     for (let i=0; i<livros.length; i++) {
         let div = document.createElement("div");
+        div.className = "card shadow col-6 col-md-2 text-center";
+        
         let img = document.createElement("img");
+        img.setAttribute("width", "100");
+        img.className = "mx-auto my-2 mb-0"
+        
         let tit = document.createElement("p");
 
         tit.innerHTML = livros[i]['livro'];
@@ -26,10 +188,12 @@
         div.appendChild(tit);
         div.appendChild(img);
 
-        container.appendChild(div)    
+        container.appendChild(div);
     }
 
-</script>
-
-</body>
+    </script>
+        
+    </script>
+    
+  </body>
 </html>
