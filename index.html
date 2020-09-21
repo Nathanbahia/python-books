@@ -199,20 +199,15 @@
             
             let tit = document.createElement("p");
             tit.style.height = "70px";
-            tit.innerHTML = livros[i].livro;
-            
-            let preco = document.createElement("p");
-            preco.style.fontSize = "14px"
-            preco.innerHTML = `${livros[i].preco}`;
+            tit.innerHTML = livros[i].livro;                        
             
             let link = document.createElement("a");
             link.setAttribute("href", livros[i].link);
             link.setAttribute("target", "_blank");
-            link.innerHTML = livros[i].loja;
+            link.innerHTML = `${livros[i].loja} - ${livros[i].preco}`;
             
             div.appendChild(tit);
-            div.appendChild(img);
-            div.appendChild(preco);
+            div.appendChild(img);            
             div.appendChild(link);
     
             container.appendChild(div);
